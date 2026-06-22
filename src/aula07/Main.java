@@ -1,7 +1,10 @@
 package aula07;
 
+import java.util.Random;
+
 public class Main {
     static void main(String[] args) {
+        Random aleatorio = new Random();
         Lutador[] l = new Lutador[5];
 
         l[0] = new Lutador("Adão", "Alemanha", 28, 1.96f, 94.3f, 14, 3, 2);
@@ -10,8 +13,8 @@ public class Main {
         l[3] = new Lutador("Jonas", "Afeganistão", 47, 2.12f, 113.6f, 9, 3, 7);
         l[4] = new Lutador("Joana", "Espanha", 39, 1.87f, 82.6f, 4, 6, 9);
 
-        for (int i = 0; i < 5; i++) {
-            l[i].apresentar();
-        }
+        Luta UEC01 = new Luta();
+        UEC01.marcarLuta(l[aleatorio.nextInt(5)], l[aleatorio.nextInt(5)]);
+        UEC01.lutar();
     }
 }
